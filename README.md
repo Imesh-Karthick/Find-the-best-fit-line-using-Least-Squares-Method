@@ -25,24 +25,43 @@ RegisterNumber:
 */
 ```
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 x = np.array([1, 2, 3, 4, 5])
+
 y = np.array([2, 4, 5, 4, 5])
+
 x_mean = np.mean(x)
+
 y_mean = np.mean(y)
+
 num = 0
+
 denom = 0
+
 for i in range(len(x)):
+
     num += (x[i] - x_mean) * (y[i] - y_mean)
+    
     denom += (x[i] - x_mean)**2
+    
     m = num / denom
+    
     b = y_mean - m * x_mean
+    
     y_predicted = m * x + b
+    
     print(y_predicted)
+    
     print(m, b)
-plt.scatter(x, y)                # Plot the actual data points
-plt.plot(x, y_predicted, color='red')  # Plot the regression line
+
+plt.scatter(x, y)              
+
+plt.plot(x, y_predicted, color='red') 
+
 plt.show()
+
 
 ## Output:
 <img width="748" height="600" alt="image" src="https://github.com/user-attachments/assets/62490f94-05d2-48f8-86e5-40058e0381b0" />
